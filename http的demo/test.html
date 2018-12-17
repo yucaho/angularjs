@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  	<script src="js/jquery-1.10.2.min.js"></script>
+  	<script src="js-frame/angularjs/angular.js"></script>
+  	
+</head>
+<body ng-app="myApp" ng-controller="test">
+     <h1>测试</h1>
+      <p>{{name}}</p>
+      <button ng-click="test()">test</button>
+ <script>
+  var app = angular.module("myApp",[]);
+  app.controller("test",function($scope,$http){
+	 	 $scope.name="张三";
+	$scope.test=function(){
+		
+		/*  $http({
+			method:"GET",
+			url:"/lyc/three",
+			params:{id:"123"},
+			headers:{
+				'Content-Type': 'application/x-www-form-urlencoded'
+			},
+		}).then(function successCallback(response){
+			console.log(response);
+		}); 
+		
+		 $http.get("/lyc/three?id="+"456").then(function(response){
+			console.log(response);
+		}); */
+		
+		/*  $http({
+				method:"PUT",
+				url:"/lyc/two",
+				params:{id:"123"},
+				headers:{
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+			}).then(function successCallback(response){
+				console.log(response);
+			}); 
+		$http.put("/lyc/two?id="+"345").then(function(response){
+			console.log(response);
+		}); */
+		
+	/* 	$http({
+			method:"DELETE",
+			url:"/lyc/one",
+			params:{id:"123"},
+			headers:{
+				'Content-Type': 'application/x-www-form-urlencoded'
+			},
+		}).then(function successCallback(response){
+			console.log(response);
+		}); 
+		$http.delete("/lyc/one?id="+"345").then(function(response){
+			console.log(response);
+		}); */
+		
+		
+		$http.post("/lyc/four?id="+"345").then(function(response){
+			console.log(response);
+		});
+		$http({
+			method:"POST",
+			url:"/lyc/four",
+			data:$.param({id:"123"}),
+			headers:{
+				
+				'Content-Type': 'application/x-www-form-urlencoded'
+			},
+		}).then(function successCallback(response){
+			console.log(response);
+		}); 
+	};
+  });
+ </script>
+</body>
+</html>
